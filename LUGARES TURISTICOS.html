@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #00FFCC;
+	margin: 0;
+	padding: 0;
+	color: #C6F;
+	background-image: url(Imagenes%20ph/cayambecoca.png);
+	background-repeat: repeat;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	line-height: 1.4;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+
+/* ~~ este contenedor de anchura fija rodea a las demás divs ~~ */
+.container {
+	background-color: #FFF; /* el valor automático de los lados, unido a la anchura, centra el diseño */
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	background-image: url(IMAJENES/img_6913.jpg);
+	width: 800px;
+}
+
+/* ~~ no se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. Contiene un marcador de posición de imagen que debe sustituirse por su propio logotipo vinculado ~~ */
+.header {
+	background-color: #ADB96E;
+	background-image: url(IMAJENES/BANNER%20PUBLICITARIO.png);
+	height: 160px;
+	width: 800px;
+	background-repeat: no-repeat;
+}
+
+/* ~~ Estas son las columnas para el diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de las divs. Los elementos situados dentro de estas divs tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral a la div propiamente dicha, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en la div y colocar una segunda div dentro de ésta sin anchura y el relleno necesario para el diseño deseado. También puede optar por eliminar el relleno del elemento en la div y colocar una segunda div dentro de ésta sin anchura y el relleno necesario para el diseño deseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso añadir un margen, evite colocarlo en el lado hacia el que se produce la flotación (por ejemplo: un margen derecho en una div configurada para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de divs para las que deba incumplirse esta regla, deberá añadir una declaración "display:inline" a la regla de la div para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que también se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos divs de barra lateral podrían apilarse si fuera necesario. Si lo prefiere, éstas pueden cambiarse a ID fácilmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegación esté a la derecha en lugar de a la izquierda, simplemente haga que estas columnas floten en dirección opuesta (todas a la derecha en lugar de todas a la izquierda) y éstas se representarán en orden inverso. No es necesario mover las divs por el código fuente HTML.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 128px;
+	background-color: #FFFFFF;
+	border-top-width: 5px;
+	border-right-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-top-color: #F9C;
+	border-right-color: #0F6;
+	border-bottom-color: #0F6;
+	border-left-color: #0F6;
+	background-image: url(IMAJENES/img_6913.jpg);
+	padding-top: 25px;
+	margin-top: 10px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+}
+.content {
+	width: 620px;
+	float: left;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	clear: right;
+	padding: 10px;
+	margin: 10px;
+	background-image: url(IMAJENES/d4.jpg);
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones */
+	background-color: #0F0;
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	width: 160px;  /*esta anchura hace que se pueda hacer clic en todo el botón para IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este vínculo de la anchura del contenedor de barra lateral. */
+	text-decoration: none;
+	background-color: #3300FF;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #333333;
+	color: #996;
+}
+
+/* ~~ El pie de página ~~ */
+.footer {
+	position: relative;/* esto da a IE6 hasLayout para borrar correctamente */
+	clear: left; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	font-style: italic;
+	height: 140px;
+	width: 800px;
+}
+
+/* ~~ clases float/clear varias ~~ */
+.fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* esta clase puede utilizarse para que un elemento flote en la parte izquierda de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* esta clase puede situarse en una <br /> o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.container .content h1 {
+	font-family: "Courier New", Courier, monospace;
+	font-style: italic;
+	color: #33C;
+	margin-right: 30px;
+	margin-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: double;
+	border-left-style: none;
+	border-bottom-color: #0F9;
+}
+.container .content h2 {
+	font-family: "Courier New", Courier, monospace;
+	font-style: oblique;
+	color: #099;
+}
+.container .content h3 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #00F;
+}
+.container .content h4 {
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+	text-transform: uppercase;
+	color: #3C0;
+}
+.content p img {
+	float: right;
+	margin-top: 50px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding-left: 20px;
+}
+-->
+</style>
+<link href="SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.SUBTITULO {	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 18px;
+	color: #0F0;
+}
+.sidebar11 {	float: left;
+	width: 128px;
+	background-color: #FFFFFF;
+	border-top-width: 5px;
+	border-right-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-top-color: #39F;
+	border-right-color: #0F6;
+	border-bottom-color: #0F6;
+	border-left-color: #0F6;
+	background-image: url(../IMAJENES/img_6913.jpg);
+	padding-top: 25px;
+	margin-top: 10px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+}
+</style>
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onload="MM_preloadImages('Imagenes ph/cayambecoca.png')">
+
+<div class="container">
+  <div class="header">
+    <div class="header">
+      <div class="header"><img src="IMAGENES/LUGARES TURISITRICOS.png" width="802" height="175" /></div>
+    </div>
+  </div>
+  <!-- TemplateBeginEditable name="EditRegion3" -->
+  <div class="sidebar1">
+    <!-- end .sidebar1 -->
+    <ul id="MenuBar1" class="MenuBarVertical">
+      <li><a href="#indexx.html">Inicio</a></li>
+      <li><a href="#Quíenes Somos.html" class="MenuBarItemSubmenu">Qu&iacute;enes Somos...</a>
+        <ul>
+          <li><a href="#mision">mision</a></li>
+          <li><a href="#vision">vision</a></li>
+          <li><a href="#Garantia">Garantia</a></li>
+        </ul>
+      </li>
+      <li><a class="MenuBarItemSubmenu" href="#Servicio.html">Servicios</a>
+        <ul>
+          <li><a href="#seguridad">Seguridad</a></li>
+          <li><a href="#equipamiento">equipamiento</a></li>
+          <li><a href="#Hospedaje ">Hospedaje y comida</a></li>
+        </ul>
+      </li>
+      <li><a href="#Lugares.html" class="MenuBarItemSubmenu">Lugares Turisticos</a>
+        <ul>
+          <li><a href="#reserva.html">reserva ecologica </a></li>
+          <li><a href="#nevado">nevado cayambe</a></li>
+          <li><a href="#mitad">mitad del mundo</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- TemplateEndEditable -->
+  <div class="content"><!-- TemplateBeginEditable name="EditRegion2" --> LUGARES TURISTICOS<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="EditRegion1" -->
+    <div>
+      <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+      <div onmouseover="MM_swapImage('vol','','IMAJENES/laguna verde.jpg',1)">
+        <p class="SUBTITULO" onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&quot;PARQUE YAZNAN &quot;<img src="IMAGENES/YAZNAN.jpg" width="300" height="168" /></p>
+        <div onmouseover="MM_swapImage('vol','','IMAJENES/laguna verde.jpg',1)"></div>
+        <p>Cascada de Cariacu </p>
+        <p>BIENVENIDA</p>
+        <p>os cayambeños y visitantes pueden descansar y distraerse en el Parque Yaznan, que se encuentra al ingreso al cantón. El área tiene varios entretenimientos para chicos, jóvenes y grandes. En una extensión de 8.500 metros cuadrados existe una laguna artificial, juegos infantiles, canchas deportivas, el rocódromo, parqueaderos, restaurante, y senderos para caminar tranquilamente. </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><strong>Cariacu</strong></p>
+        <p><img src="IMAGENES/CASCADA DE CARIACU.jpg" width="124" height="182" align="right" />Una comunidad de 250 personas ubicada a 2 888 m de altura, esconde un sendero que lleva a 16 cascadas, según los moradores de la zona.El poblado andino de casas pequeñas, algunas de ellas de adobe y con tejas, está a 10 km de Cayambe por la vía que conduce también a Paquiestancia, La Chimba y otras poblaciones del cantón pichinchano.A 2 km de la casa comunal hay un sendero que sorprende desde los primeros pasos.A los 10 minutos se llega a la primera cascada &ldquo;<strong>Kuchi Kama</strong>&rdquo; en donde se realizan rituales de purificación.La palabra Cariyacu proviene de dos palabras quichuas &ldquo;Cari&rdquo; que significa hombre o varón y &ldquo;Yacu&rdquo; que significa agua, es decir, &ldquo;Hombre o Varón de Agua&rdquo;.Desde la carretera de tierra, a la que es preferible acudir con un vehículo alto, no se observan ni las cascadas ni el río.Parece que el lugar fuera un enorme escenario de pastizales y sembríos de distintos tonos verduzcos. Sin embargo, en medio de montañas que están junto al nevado Cayambe, la vegetación empieza a cambiar por la presencia del agua que baja del glaciar.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="sidebar11" onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+        <p class="sidebar11" onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+        <p class="SUBTITULO" onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+        <p class="SUBTITULO" onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+        <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+        <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+        <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+        <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+        <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+      </div>
+      <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+      <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+      <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+      <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+      <p onmouseover="MM_swapImage('noame','','Imagenes ph/cayambecoca.png',1)">&nbsp;</p>
+    </div>
+    <!-- TemplateEndEditable --><!-- end .content --></div>
+  <div class="footer">Elaborado por : Quishpe Maribel 
+    <p>&nbsp;</p>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+</body>
+</html>
